@@ -11,10 +11,19 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-            command: npm run test:addToCart
+          command: npm run test:addToCart
       - name: Cypress test Report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-           name: HTML Report
-           path: cypress/reports/html   
-           
+          name: HTML Report
+          path: cypress/reports/html
+
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
+          SLACK_ICON: https://github.com/rtCamp.png?size=48
+          SLACK_MESSAGE: "Test Automation Report https://github.com/Mohamed-Ishak/Cypress-E2E/actions/runs/7798702870/artifacts/${{github.run_id}}"
+          SLACK_TITLE: Cypress WebApplication Test
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
