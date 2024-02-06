@@ -1,0 +1,12 @@
+{
+    "login":{
+        "email":"test.qaw@dispostable.com",
+        "password":"wed$1254fg"
+    },
+    "product":{
+        "productName":"MacBook"
+    },
+    "message":{
+         "successMessage":" Success: You have added MacBook to your shopping cart!"
+    }
+}
