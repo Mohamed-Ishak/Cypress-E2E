@@ -16,5 +16,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
            name: HTML Report
-           path: cypress/reports/html# or path/to/artifact    
+           path: cypress/reports/html   
            
