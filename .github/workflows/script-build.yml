@@ -12,3 +12,9 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
             command: npm run test:addToCart
+      - name: Cypress test Report
+        uses: actions/upload-artifact@v4
+        with:
+           name: HTML Report
+           path: cypress/reports/html# or path/to/artifact    
+           
